@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="styles.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+		<title>Mon resto</title>
+	</head>
+	<body>
+		<div class="container">
+			<header class="titre">
+				<div>
+					<img src="images/MVB237.png" alt=" Vôtre Resto près de chez vous" />
+				</div>
+				<div>
+					<h3><i class="fa-solid fa-phone"></i>&nbsp;Appelez-nous: 659312465 </h3>
+				</div>
+			</header>
+			<section class="carrousel">
+				<div class="images">
+					<img class="slider-item" src="images/ndole.jpg" />
+					<img class="slider-item" src="images/poulet.jpg" />
+					<img class="slider-item" src="images/poisson.jpg" />
+				</div>
+				<div class="fleches">
+					<span><i id="gauche" class="fa-solid fa-angle-left fa-2xl"></i></span>
+					<span><i id="droite" class="fa-solid fa-angle-right fa-2xl"></i></span>
+				</div>
+			</section>
+			<nav>
+				<div id="toggle-btn">
+					<i class="fa-solid fa-bars fa-xl"></i>
+				</div>
+				<ul id="ulref">
+					<li>Réalisations</li>
+					<li>Entrées</li>
+					<li>Plats</li>
+					<li>Desserts</li>
+					<li>Boissons</li>
+					<li>Contact</li>
+				</ul>
+			</nav>
+			<section class="articles">
+				<article class="un">
+					<h5>Suggestions de la semaine :</h5><br/>
+					<p><b>- ENTREES</b></p>
+					<p>Salade au thon, oeuf, tomate cerises, petits pois: 1000FCFA</p>
+					<p>Quart de poulet rôti, poêlée de légumes de saison, réduction aux éclats de morilles: 3000FCFA</p><br/>
+					<p><b>- PLATS</b></p>
+					<p>Plat de eru, peau de boeuf, poisson fumé, couscous manioc: 2000FCFA</p>
+					<p>Entrecôte de boeuf rôti, rôti de pommes de terre ou riz au choix, haricots verts lardés, jus crémé à l’estragon: 3500FCFA</p><br/>
+					<p><b>- DESSERT</b></p>
+					<P>Crêpes façon «Suzette» à la mandarine, glace à la vanille : 1000FCFA</p>
+				</article>
+				<article class="deux">
+					<h4>Nous vous proposons un menu 3 services au choix</h4><br/>
+					<p>Celui-ci varie selon le marché et les saisons, il peut changer quotidiennement comme hebdomadairement</p>
+					<p>Dégustez des plats savoureux dans un cadre exceptionnel ! Cuisine raffinée. Service haut de gamme. </p>
+					<p>Tous les ingrédients sont frais et soigneusement choisis par notre chef.</p>
+					<p>En espérant que vous prendrez du plaisir à manger chez nous.</p><br/>
+					<p>Ne ratez pas l'occasion de passer votre commande.</p>
+					<button class="bouton"><i class="fa-solid fa-file-alt fa-xl"></i>&nbsp;PASSEZ VOTRE COMMANDE ICI</button>
+				</article>
+			</section>
+			<section class="temoignages">
+				<h2>Ce que nos clients pensent de nous</h2>
+				<div class="temoignage_card">
+					<div class="card">
+						<h5 class="name">Cindy M.</h5>
+						<p>Nous y avons commandé vendredi soir. Prix très accessibles pour un site de cuisine gastronomique</p>
+					</div>
+					<div class="card">
+						<h5 class="name">Joëlle D.</h5>
+						<p>Très bon, Le menu était délicieux, Les vins aussi !.</p>
+					</div>
+					<div class="card">
+						<h5 class="name">Fabrice C</h5>
+						<p>le chef a encore ravi nos papilles! Que ca soit par le forfait vin, que par le menu 3 services</p>
+					</div>
+					<div class="card">
+						<h5 class="name">Romuald H</h5>
+						<p>Très bon, service rapide et super bon, rien à redire. </p>
+					</div>
+					<div class="card">
+						<h5 class="name">Patricia H</h5>
+						<p>Beau site pour commander à manger et facile d'accès. Et surtout cuisine raffinée.</p>
+					</div>
+					<div class="card">
+						<h5 class="name">Serge G</h5>
+						<p>Un petit lunch entre amis avec un délicieux poisson en plat, un vin blanc conseillé par le patron, à refaire dès que possible.....</p>
+					</div>
+				</div>
+				<button>Plus de témoignages Clients ici</button>
+			</section>
+			<footer>
+				<p>MVB237 Numéro entreprise : 620417880 tel: 659312465</p>
+			</footer>
+		</div>
+		<script>
+			// Menu Hamburger
+			const btn = document.querySelector('#toggle-btn');
+			const ul  = document.getElementById('ulref');
+
+			btn.onclick = ()=> ul.style.opacity == 0 ? ul.style.opacity = 1 : ul.style.opacity = 0;
+
+			// carrousel
+			const carrousel_content = document.querySelector('.images');
+			const prev = document.getElementById('gauche');
+			const next = document.getElementById('droite');
+			let translate = 0;
+
+			prev.onclick = ()=>{
+				translate += 100;
+				if(translate > 0)
+					translate = 0;
+				carrousel_content.style.transform = 'translateX(' + translate +'%)';
+			}
+			next.onclick = ()=>{
+				translate -= 100;
+				if(translate < -200)
+					translate = -200;
+				carrousel_content.style.transform = 'translateX(' + translate +'%)';
+			}
+		</script>
+	</body>
+</html>
